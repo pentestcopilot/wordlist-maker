@@ -11,6 +11,20 @@ Under the hood, wordlist-maker makes use of [Handlebars](https://handlebarsjs.co
 | camelcase  | Convert a string to camelCase           |
 | capitalize | Capitalize the first letter of a string |
 
+Combo with other helpers:
+
+```handlebars
+{{capitalize (camelcase "hello world")}}
+```
+
+> [!TIP]
+>
+> **Good to know:** you can combine with other files to create a more complex and smart wordlist.
+>
+> ```bash
+> cat leaked_password.txt top_100_passwords.txt > wordlist.txt
+> ```
+
 ## Stay in touch
 
 - Author - [Natan Rodrigues](https://github.com/natanrce)

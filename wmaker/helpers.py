@@ -2,9 +2,10 @@
 This module contains custom helpers for the Handlebars templating engine.
 """
 import pybars
+import datetime
 
 def leet(this: pybars.Scope, value: str):
-    """Converts a string to leet speak."""
+    """Converts a string to leet l33t 1337."""
     leet = {
         'a': '4',
         'b': '8',
@@ -29,3 +30,19 @@ def uppercase(this: pybars.Scope, value: str):
 def lowercase(this: pybars.Scope, value: str):
     """Converts a string to lowercase."""
     return value.lower()
+
+def count(
+    this: pybars.Scope, 
+    options: dict, 
+    starts: int = 2012, 
+    ends = datetime.datetime.now().year
+):
+    """
+    By default it generates a list of numbers 
+    from 2012 to the current year.
+    """
+    items = [
+        {'i': i, **this.context} 
+        for i in range(starts, ends + 1)
+    ]
+    return [f'{options['fn'](item)}'.lstrip() for item in items]

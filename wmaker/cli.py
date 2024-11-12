@@ -22,8 +22,8 @@ def extract_mustaches(template_content: str):
 
 epilog = """
 All mustaches should be specified in the format --key value. For example,
-if your template includes {{username}}, you should \
-run the script like this:
+if your template includes {{username}}, you should run the script like 
+this:
 
 wmaker template.hbs output.txt --username john
 """

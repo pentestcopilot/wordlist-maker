@@ -31,6 +31,14 @@ def lowercase(this: pybars.Scope, value: str):
     """Converts a string to lowercase."""
     return value.lower()
 
+def camelcase(this: pybars.Scope, value: str):
+    """Converts a string to camelCase."""
+    return value[0].lower() + value.title().replace(' ', '')[1:]
+
+def snakecase(this: pybars.Scope, value: str):
+    """Converts a string to snake_case."""
+    return value.lower().replace(' ', '_')
+
 def count(
     this: pybars.Scope, 
     options: dict, 

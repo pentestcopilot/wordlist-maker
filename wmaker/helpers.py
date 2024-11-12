@@ -39,6 +39,10 @@ def snakecase(this: pybars.Scope, value: str):
     """Converts a string to snake_case."""
     return value.lower().replace(' ', '_')
 
+def kebabcase(this: pybars.Scope, value: str):
+    """Converts a string to kebab-case."""
+    return value.lower().replace(' ', '-')
+
 def count(
     this: pybars.Scope, 
     options: dict, 

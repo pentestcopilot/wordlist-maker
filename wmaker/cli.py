@@ -18,7 +18,7 @@ custom_helpers = {
 
 def extract_mustaches(template_content: str):
     # Matches {{variable}} or {{#if variable}}
-    return set(re.findall(r"{{\s*(\w+)\s*}}", template_content))
+    return set(re.findall(r"{{\s*(?!i\b)(\w+)\s*}}", template_content))
 
 epilog = """
 All mustaches should be specified in the format --key value. For example,

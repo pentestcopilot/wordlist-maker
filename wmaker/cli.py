@@ -11,10 +11,8 @@ from __init__ import __version__
 # Create a new instance of the Handlebars compiler
 compiler = Compiler()
 
-custom_helpers = {
-    key: value 
-    for key, value in getmembers(helpers, isfunction)
-}
+# Get all the functions from the helpers module
+custom_helpers = dict(getmembers(helpers, isfunction))
 
 def extract_mustaches(template_content: str):
     # Matches {{variable}} or {{#if variable}}
